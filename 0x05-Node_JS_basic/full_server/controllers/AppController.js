@@ -1,3 +1,6 @@
+/**
+ * Miscellaneous route.
+ */
 class AppController {
   static getHomepage(request, response) {
     response.status(200).send('Hello Holberton School!');
@@ -5,3 +8,4 @@ class AppController {
 }
 
 export default AppController;
+module.exports = AppController;

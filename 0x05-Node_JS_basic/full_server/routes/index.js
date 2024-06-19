@@ -1,7 +1,12 @@
-import express from 'express';
-import router from './routes';
+import AppController from '../controllers/AppController';
+import StudentsController from '../controllers/StudentsController';
 
-const app = express();
-app.use('/', router);
 
-export default app;
+const mapRoutes = (app) => {
+  app.get('/', AppController.getHomepage);
+  app.get('/students', StudentsController.getAllStudents);
+  app.get('/students/:major', StudentsController.getAllStudentsByMajor);
+};
+
+export default mapRoutes;
+module.exports = mapRoutes;
